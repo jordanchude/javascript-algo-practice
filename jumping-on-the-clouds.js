@@ -1,4 +1,5 @@
 // JUMPING ON THE CLOUDS
+// Description: https://bit.ly/2GxrxrO
 
 /* 
 Input
@@ -16,12 +17,13 @@ Pseudocode
 PROCEDURE jumpingOnClouds(c)
     INITIALIZE steps equal to zero
     FOR loop through array while initializer is less than or equal to length of c
-        IF c[i] and c[i-1] is equal to zero
+        IF c[i] and c[i+1] and c[i+2] is equal to zero
+            increment i by 1
             add one to steps
-        ELSEIF c[i] is equal to zero and c[i-1] is equal to one
+        ELSE IF c[i] is equal to zero and c[i+1] is equal to zero
             add one to steps
-        ELSEIF c[i] is equal to one
-            steps
+        ELSE
+            steps remains constant
         ENDIF
     ENDLOOP
     RETURN steps
@@ -30,6 +32,7 @@ ENDPROCEDURE
 
 function jumpingOnClouds(c) {
     let steps = 0;
+    // O(n)
     for (let i = 0; i < c.length; i++) {
         if (c[i] == 0 && c[i+1] == 0 && c[i+2] == 0) {
             i+=1
@@ -41,8 +44,8 @@ function jumpingOnClouds(c) {
         else if (c[i] == 0 && c[i+1] == 1) {
             steps++;
         }
-        else if (c[i] == 1) {
-            steps = steps;
+        else {
+            steps;
         }
     }
     return steps;
