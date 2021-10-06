@@ -25,4 +25,24 @@ var search = function(nums, target) {
     return nums.indexOf(target);
 }
 
+// BINARY SEARCH
+var search = function(nums, target) {
+    let lower = 0;
+    let upper = nums.length - 1;
+    
+    while (lower <= upper) {
+        let middle = lower + Math.floor((upper - lower) / 2)
+        
+        if (target === nums[middle]) {
+            return middle;
+        } else if (target < nums[middle]) {
+            upper = middle - 1;
+        } else {
+            lower = middle + 1;
+        }
+    }
+    
+    return -1;
+};
+
 console.log(search([-1,0,3,5,9,12], 9))
