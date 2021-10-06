@@ -2,6 +2,14 @@
 
 // You must write an algorithm with O(log n) runtime complexity.
 
+// PSUEDO CODE
+// search = function(nums, target) {
+//     loop through array max nums times 
+//     if array contains target, return index 
+//     else return -1
+// }
+
+
 // LOOP
 var search = function(nums, target) {
     for (let i = 0; i < nums.length; i++) {
