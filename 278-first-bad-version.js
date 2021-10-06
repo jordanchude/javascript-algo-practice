@@ -48,24 +48,25 @@
 // };
 
 // ITERATIVE SOLUTION [TIME LIMIT EXCEEDED]
-// var solution = function(isBadVersion) {
+// // var solution = function(isBadVersion) {
 //     /**
 //      * @param {integer} n Total versions
 //      * @return {integer} The first bad version
 //      */
-//     return function(n) {
-//         let left = 0;
-//         let right = n;
+//      return function(n) {
+//         let lower = 1;
+//         let upper = n;
         
-//         while (left <= right) {
-//             let mid = left + (n - left) / 2
-//             if (mid === isBadVersion(n)) {
-//                 return true;
-//             } else if (mid < n) {
-//                 right = mid - 1;
+//         while (lower <= upper) {
+//             let middle = lower + Math.floor((upper - lower) / 2)
+            
+//             if (isBadVersion(middle)) {
+//                 upper = middle;
 //             } else {
-//                 left = mid + 1;
+//                 lower = middle + 1;
 //             }
 //         }
+        
+//         return lower;
 //     };
 // };
