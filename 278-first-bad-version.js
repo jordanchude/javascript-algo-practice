@@ -46,3 +46,26 @@
 //             left mid plus 1
 //     };
 // };
+
+// ITERATIVE SOLUTION [TIME LIMIT EXCEEDED]
+// var solution = function(isBadVersion) {
+//     /**
+//      * @param {integer} n Total versions
+//      * @return {integer} The first bad version
+//      */
+//     return function(n) {
+//         let left = 0;
+//         let right = n;
+        
+//         while (left <= right) {
+//             let mid = left + (n - left) / 2
+//             if (mid === isBadVersion(n)) {
+//                 return true;
+//             } else if (mid < n) {
+//                 right = mid - 1;
+//             } else {
+//                 left = mid + 1;
+//             }
+//         }
+//     };
+// };
