@@ -29,9 +29,28 @@ Outputs: Location of target value in sorted array
 
 PSEUDOCODE
 FUNCTION searchInsert EQUALS function(nums, target) {
+    FOR LOOP through array
+        IF target is in array 
+            return index
+    END LOOP 
+    
     insert target into array
     sort array
     return index of target
 };
 
 */
+
+// INEFFICIENT SOLUTION
+// var searchInsert = function(nums, target) {
+//     for (let i = 0; i < nums.length; i++) {
+//        if (nums[i] == target) {
+//            return i;
+//        }
+//     }
+//     nums.push(target);
+//     nums.sort(function(a, b) {return a-b})
+//     return nums.indexOf(target);
+// };
+
+console.log(searchInsert([1,3,5,6], 5))
