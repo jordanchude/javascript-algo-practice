@@ -12,7 +12,9 @@
         if (x < 2) {
             return x;
         } else if (num > x) {
-            
+            end = middle - 1;
+        } else {
+            start = middle + 1;
         }
     }
 };
