@@ -18,43 +18,51 @@ Understand the Problem
 /* PSUEDOCODE
 
 FUNCTION (x) 
-    VARIABLE start equals 0
-    VARITABLE end = last possible integer
+    IF x is smaller than 2
+        RETURN x
+    ENDIF
+
+    VARIABLE start equals 2
+    VARITABLE end equals last possible integer
 
     WHILE end is bigger than or equal to start
-        VARIABLE middle equals start plus end divided by two
+        VARIABLE middle equals math floor start plus end divided by two
         VARIABLE num equals middle multipled by middle
 
-        IF x is equal to two
-            return one
-        ELSEIF num is bigger than x
+        IF num is bigger than x
             end equals middle minus one
-        ELSEIF num is smaller than x
+        ELSE IF num is less than x
             start equals middle plus one
         ELSE
             return middle
         ENDIF
     ENDWHILE
+    return end
 END FUNCTION
 
 */
 
  var mySqrt = function(x) {
-    var start = 0;
+    if (x < 2) {
+        return x;
+    }
+
+    var start = 2;
     var end = Number.MAX_SAFE_INTEGER;
 
     while (start <= end) {
-        var middle = (start + end)/2;
+        var middle = Math.floor((start + end)/2);
         var num = middle * middle;
 
-        if (x === num) {
-            return middle;
-        } else if (num > x) {
+        if (num > x) {
             end = middle - 1;
         } else if (num < x) {
             start = middle + 1;
-        } 
+        } else {
+            return middle;
+        }
     }
+    return end;
 };
 
-console.log(mySqrt(25))
+console.log(mySqrt(36))
