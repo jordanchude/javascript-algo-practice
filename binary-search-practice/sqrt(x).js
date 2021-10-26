@@ -15,10 +15,41 @@ Understand the Problem
 // @param {number} x
 // @return {number}
 
+/* PSUEDOCODE
+
+FUNCTION (x) 
+    VARIABLE start equals 0
+    VARITABLE end = last possible integer
+
+    WHILE end is bigger than or equal to start
+        VARIABLE middle equals start plus end divided by two
+        VARIABLE num equals middle multipled by middle
+
+        IF x is equal to two
+            return one
+        ELSEIF num is bigger than x
+            end equals middle minus one
+        ELSEIF num is smaller than x
+            start equals middle plus one
+        ELSE
+            return middle
+        ENDIF
+    ENDWHILE
+END FUNCTION
+
+*/
+
  var mySqrt = function(x) {
     var start = 0;
     var end = Number.MAX_SAFE_INTEGER;
 
+    while (start <= end) {
+        var middle = (start + end)/2;
+        var num = middle * middle;
+
+        
+
+    }
     
 };
 
