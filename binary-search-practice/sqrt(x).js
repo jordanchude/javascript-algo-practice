@@ -47,10 +47,14 @@ END FUNCTION
         var middle = (start + end)/2;
         var num = middle * middle;
 
-        
-
+        if (x === num) {
+            return middle;
+        } else if (num > x) {
+            end = middle - 1;
+        } else if (num < x) {
+            start = middle + 1;
+        } 
     }
-    
 };
 
-console.log(mySqrt(50))
+console.log(mySqrt(25))
