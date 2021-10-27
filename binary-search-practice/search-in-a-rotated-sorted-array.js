@@ -51,14 +51,24 @@ var search = function(nums, target) {
     }
     
     // binary searches
-    while (start < end) {
+    while (start <= end) {
         var middle = null;
         if (target === nums[pivot]) {
             return pivot;
         } else if (target > nums[nums.length -1]) {
-            
+            end = pivot;
+            middle = Math.floor((start + end)/2)
+            console.log(start, middle, end);
+            if (target === nums[middle]) {
+                return nums[middle];
+            } 
+            // else if (target > nums[middle]) {
+            //     start = middle + 1;
+            // } else {
+            //     end = middle - 1;
+            // }
         }
     }
 };
 
-console.log(search([4,5,6,7,0,1,2], 3));
+console.log(search([4,5,6,7,0,1,2], 5));
