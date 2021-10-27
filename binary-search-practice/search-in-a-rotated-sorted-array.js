@@ -26,8 +26,39 @@ Label the pivot, the target, and the num as their own variables.
 */ 
 
 /* PSUEDOCODE
-
+    FUNCTION (nums, target)
+        find pivot value
+        IF target is equal to pivot index in nums
+            return pivot
+        ELSE IF target is bigger than end of array
+            binary search above pivot
+        ELSE IFtarget is bigger than pivot value minus one
+            binary search below pivot
+        ENDIF 
+        return -1
+    ENDFUNCTION
 */
 var search = function(nums, target) {
+    var start = 0;
+    var end = nums.length - 1;
+
+    // find pivot
+    var pivot = null;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > nums[i+1]) {
+            pivot = i;
+        }
+    }
     
+    // binary searches
+    while (start < end) {
+        var middle = null;
+        if (target === nums[pivot]) {
+            return pivot;
+        } else if (target > nums[nums.length -1]) {
+            
+        }
+    }
 };
+
+console.log(search([4,5,6,7,0,1,2], 3));
