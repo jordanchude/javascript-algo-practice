@@ -24,3 +24,10 @@ Yes.
 5. How should I label the important pieces of data that are a part of the problem?
 Label the pivot, the target, and the num as their own variables.
 */ 
+
+/* PSUEDOCODE
+
+*/
+var search = function(nums, target) {
+    
+};
