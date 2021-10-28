@@ -59,10 +59,15 @@ var search = function(nums, target) {
     } else {
         start = pivot;
     }
-    
+
+    console.log(nums[start], nums[end])
     // binary search
     while (start <= end) {
         var middle = Math.floor((start + end)/2);
+        console.log(nums[middle])
+        if (target === nums[end]) {
+            return end;
+        }
 
         if (target === nums[middle]) {
             return middle;
@@ -75,4 +80,4 @@ var search = function(nums, target) {
     return -1;
 };
 
-console.log(search([4,5,6,7,0,1,2], 1));
+console.log(search([3,1], 1));
