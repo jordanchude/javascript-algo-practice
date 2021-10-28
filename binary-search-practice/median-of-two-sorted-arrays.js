@@ -18,5 +18,16 @@ The overall run time complexity should be O(log (m+n)).
 - Yes.
 
 5. How should I label the important pieces of data that are a part of the problem?
-- Label the first array, second array, and median.
+- Label the first array, second array, their lengths, and final median.
 */
+
+/* PSUEDOCODE
+FUNCTION findMedianSortedArrays(nums1, nums2)
+    VARIABLE
+    IF m is bigger than or equal to n
+        initiate start variable
+    ENDIF
+ENDFUNCTION
+*/
+
+console.log(findMedianSortedArrays([1,3], [2]))
