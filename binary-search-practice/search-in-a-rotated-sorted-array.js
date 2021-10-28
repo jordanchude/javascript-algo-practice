@@ -39,45 +39,80 @@ Label the pivot, the target, and the num as their own variables.
     ENDFUNCTION
 */
 
+// FIRST SOLUTION
+// var search = function(nums, target) {
+//     var start = 0;
+//     var end = nums.length - 1;
+
+//     // find pivot
+//     var pivot = null;
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] > nums[i+1]) {
+//             pivot = i;
+//         }
+//     }
+
+//     // make pivot start or end
+//     if (target === nums[pivot]) {
+//         return pivot;
+//     } else if (target > nums[nums.length - 1]) {
+//         end = pivot;
+//     } else {
+//         start = pivot;
+//     }
+
+//     console.log(nums[start], nums[end])
+//     // binary search
+//     while (start <= end) {
+//         var middle = Math.floor((start + end)/2);
+//         console.log(nums[middle])
+//         if (target === nums[end]) {
+//             return end;
+//         }
+
+//         if (target === nums[middle]) {
+//             return middle;
+//         } else if (target > nums[middle]) {
+//             start = middle + 1;
+//         } else {
+//             end = middle - 1;
+//         }
+//     }
+//     return -1;
+// };
+
+/* OPTIMIZED PSUEDOCODE
+FUNCTION (nums, target)
+    VARIABLE start equals zero
+    VARIABLE end equals length of array minus one
+
+    WHILE start is bigger than or equal to end
+        VARABLE middle equals start plus end minus start divided by two
+
+        IF middle of nums array equals target
+            return middle
+        ELSEIF middle of nums array is bigger than or equal to start
+            IF target is bigger than or equal to start and target is less than middle
+                end equals mid minus one
+            ELSE
+                start equals mid plus one
+            ENDIF
+        ELSE
+            IF target is less than or equal to end and target is bigger than mid
+                start = mid + 1
+            ELSE
+                end = mid - 1
+            ENDIF
+        ENDIF
+    ENDWHILE
+    RETURN negative one
+END FUNCTION
+*/ 
+
+// OPTIMIZED SOLUTION
 var search = function(nums, target) {
     var start = 0;
-    var end = nums.length - 1;
-
-    // find pivot
-    var pivot = null;
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] > nums[i+1]) {
-            pivot = i;
-        }
-    }
-
-    // make pivot start or end
-    if (target === nums[pivot]) {
-        return pivot;
-    } else if (target > nums[nums.length - 1]) {
-        end = pivot;
-    } else {
-        start = pivot;
-    }
-
-    console.log(nums[start], nums[end])
-    // binary search
-    while (start <= end) {
-        var middle = Math.floor((start + end)/2);
-        console.log(nums[middle])
-        if (target === nums[end]) {
-            return end;
-        }
-
-        if (target === nums[middle]) {
-            return middle;
-        } else if (target > nums[middle]) {
-            start = middle + 1;
-        } else {
-            end = middle - 1;
-        }
-    }
-    return -1;
 };
+
 
 console.log(search([3,1], 1));
