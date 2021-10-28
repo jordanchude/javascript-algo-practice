@@ -32,12 +32,13 @@ Label the pivot, the target, and the num as their own variables.
             return pivot
         ELSE IF target is bigger than end of array
             binary search above pivot
-        ELSE IFtarget is bigger than pivot value minus one
+        ELSE IF target is bigger than pivot value minus one
             binary search below pivot
         ENDIF 
         return -1
     ENDFUNCTION
 */
+
 var search = function(nums, target) {
     var start = 0;
     var end = nums.length - 1;
@@ -49,26 +50,29 @@ var search = function(nums, target) {
             pivot = i;
         }
     }
+
+    // make pivot start or end
+    if (target === nums[pivot]) {
+        return pivot;
+    } else if (target > nums[nums.length - 1]) {
+        end = pivot;
+    } else {
+        start = pivot;
+    }
     
-    // binary searches
+    // binary search
     while (start <= end) {
-        var middle = null;
-        if (target === nums[pivot]) {
-            return pivot;
-        } else if (target > nums[nums.length -1]) {
-            end = pivot;
-            middle = Math.floor((start + end)/2)
-            console.log(start, middle, end);
-            if (target === nums[middle]) {
-                return nums[middle];
-            } 
-            // else if (target > nums[middle]) {
-            //     start = middle + 1;
-            // } else {
-            //     end = middle - 1;
-            // }
+        var middle = Math.floor((start + end)/2);
+
+        if (target === nums[middle]) {
+            return middle;
+        } else if (target > nums[middle]) {
+            start = middle + 1;
+        } else {
+            end = middle - 1;
         }
     }
+    return -1;
 };
 
-console.log(search([4,5,6,7,0,1,2], 5));
+console.log(search([4,5,6,7,0,1,2], 1));
