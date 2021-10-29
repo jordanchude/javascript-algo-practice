@@ -22,12 +22,24 @@ The overall run time complexity should be O(log (m+n)).
 */
 
 /* PSUEDOCODE
-FUNCTION findMedianSortedArrays(nums1, nums2)
-    VARIABLE
-    IF m is bigger than or equal to n
-        initiate start variable
-    ENDIF
-ENDFUNCTION
+function findMedianSortedArrays(arr, arr2) {
+    merge both arrays
+    sort arrays
+    find median of middle value(s)
+}
+
+function findMedianSortedArrays(arr1, arr2) {
+    if arr is empty, return value of arr2
+    if arr2 is empty, return value of arr1
+    if last index in arr1 is less than first index in the second array, arr 3 is equal to push arr2 onto arr1
+    if last index in arr2 is more than first index in second array, arr 3 is equal to push arr1 onto arr2
+
+    
+    return median of arr3
+}
 */
 
 console.log(findMedianSortedArrays([1,3], [2]))
+console.log(findMedianSortedArrays([1,2], [3,4]))
+console.log(findMedianSortedArrays([1,2], [3]))
+console.log(findMedianSortedArrays([3,4], [1,2]))
