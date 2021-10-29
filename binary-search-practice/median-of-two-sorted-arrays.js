@@ -29,8 +29,8 @@ function findMedianSortedArrays(arr, arr2) {
 }
 
 function findMedianSortedArrays(arr1, arr2) {
-    if arr is empty, return value of arr2
-    if arr2 is empty, return value of arr1
+    if arr is empty, return median of arr2
+    if arr2 is empty, return median of arr1
     if last index in arr1 is less than first index in the second array, arr 3 is equal to push arr2 onto arr1
     if last index in arr2 is more than first index in second array, arr 3 is equal to push arr1 onto arr2
 
@@ -39,7 +39,31 @@ function findMedianSortedArrays(arr1, arr2) {
 }
 */
 
-console.log(findMedianSortedArrays([1,3], [2]))
-console.log(findMedianSortedArrays([1,2], [3,4]))
-console.log(findMedianSortedArrays([1,2], [3]))
-console.log(findMedianSortedArrays([3,4], [1,2]))
+function findMedianSortedArrays(arr1, arr2) {
+    if (arr1.length == 0) {
+        if (arr2.length % 2 != 0) {
+            var mid = Math.floor(arr2.length / 2);
+            return arr2[mid];
+        } else {
+            var mid = Math.floor(arr2.length / 2);
+            // return (arr2[mid] + arr2[mid + 1]) / 2;
+            return (arr2[mid] + arr2[mid - 1]) / 2
+        }
+    } else if (arr2.length == 0) {
+        if (arr1.length % 2 != 0) {
+            var mid = Math.floor(arr1.length / 2);
+            return arr1[mid];
+        } else {
+            var mid = Math.floor(arr1.length / 2);
+            return (arr1[mid] + arr1[mid - 1]) / 2
+        }
+    }
+}
+
+// console.log(findMedianSortedArrays([1,3], [2]))
+// console.log(findMedianSortedArrays([1,2], [3,4]))
+// console.log(findMedianSortedArrays([1,2], [3]))
+// console.log(findMedianSortedArrays([3,4], [1,2]))
+// console.log(findMedianSortedArrays([3,4], []))
+// console.log(findMedianSortedArrays([], [3,4,5]))
+// console.log(findMedianSortedArrays([], [3,4]))
