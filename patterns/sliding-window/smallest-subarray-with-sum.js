@@ -14,15 +14,23 @@ const smallest_subarray_with_given_sum = function(s, arr) {
     for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
         windowSum += arr[windowEnd]
 
-        if (windowSum <= s) {
+        if (Math.max(...arr) >= s) {
+            return 1
+        } else if (windowSum <= s) {
             subArray.push(arr[windowEnd])
         } else {
-            return subArray;
+            return subArray.length;
         }
     }
     
     return 0;
   };
 
-  const result = smallest_subarray_with_given_sum(7, [2,1,5,2,8]);
+  // tests
+//   const result = smallest_subarray_with_given_sum(7, [2,1,5,2,8]);
+
+//   const result = smallest_subarray_with_given_sum(7, [2,1,5,2,3,2])
+
+  const result = smallest_subarray_with_given_sum(8, [3,4,1,1,6])
+
 console.log(`Smallest subarray: ${result}`);
