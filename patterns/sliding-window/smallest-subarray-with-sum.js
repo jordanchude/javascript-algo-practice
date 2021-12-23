@@ -42,3 +42,5 @@ const smallest_subarray_with_given_sum = function(s, arr) {
   const result = smallest_subarray_with_given_sum(8, [3,4,1,1,6])
 
 console.log(`Smallest subarray: ${result}`);
+
+// solution adds items together until bigger than s, but doesn't find the smallest array
