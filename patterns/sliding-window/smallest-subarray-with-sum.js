@@ -12,12 +12,20 @@ const smallest_subarray_with_given_sum = function(s, arr) {
     let windowStart = 0;
 
     for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-        windowSum += arr[windowEnd]
+        windowSum += arr[windowEnd] // add next element
 
+        // if item in array is bigger than s
+        // return 1
         if (Math.max(...arr) >= s) {
             return 1
-        } else if (windowSum <= s) {
+
+        // if window sum is less than or equal to s
+        // add it to sub array
+        } else if (windowSum < s) {
             subArray.push(arr[windowEnd])
+
+        // if s is bigger than or equal to windowSum
+        // return subarray length
         } else {
             return subArray.length;
         }
