@@ -33,3 +33,6 @@ const max_sub_array_of_size_k = function(k, arr) {
 
 const result = max_sub_array_of_size_k(3, [1, 3, 2, 6, -1, 4, 1, 8, 2]);
 console.log(`Subarray with maximum sum is: ${result}`);
+
+// Time Complexity: O(N)
+// Space Complexity: O(1)
