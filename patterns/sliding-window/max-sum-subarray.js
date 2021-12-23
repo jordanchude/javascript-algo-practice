@@ -18,6 +18,9 @@ const max_sub_array_of_size_k = function(k, arr) {
             if (windowSum >= result) {
                 result = windowSum
             }
+
+            // Math.max alternative
+            // result = Math.max(maxSum, windowSum)
             
             windowSum -= arr[windowStart] // subtract outgoing element
             windowStart += 1; // slide window ahead
