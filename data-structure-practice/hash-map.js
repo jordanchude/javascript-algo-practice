@@ -2,10 +2,12 @@ let string = "JordanWilliams"
 let map = {}
 
 for (let i = 0; i < string.length; i++) {
-   if (!(string[i] in map)) {
-       map[string[i]] = 0;
+    let currentChar = string[i];
+
+   if (!(currentChar in map)) {
+       map[currentChar] = 0;
    } 
-   map[string[i]] += 1
+   map[currentChar] += 1
 }
 
 console.log(map);
