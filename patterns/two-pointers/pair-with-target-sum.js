@@ -22,12 +22,13 @@ const pair_with_targetsum = function(arr, target_sum) {
     let output = []
 
     while (start < end) {
-        if (arr[start] + arr[end] === target_sum) {
+        const currentSum = arr[start] + arr[end];
+        if (currentSum === target_sum) {
             output.push(start, end)
             return output;
-        } else if ((arr[start] + arr[end]) > target_sum) {
+        } else if (currentSum > target_sum) {
             end = end - 1;
-        } else if ((arr[start] + arr[end]) < target_sum) {
+        } else if (currentSum < target_sum) {
             start = start + 1;
         }
     }
