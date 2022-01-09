@@ -18,5 +18,22 @@
 
 const pair_with_targetsum = function(arr, target_sum) {
     // TODO: Write your code here
+
+    // pseudocode
+    // initiate "start" variable
+    // initiate "end" variable
+    // initiate "output" variable
+
+    // loop through Array
+    //     if start plus end is equal to target sum 
+    //     push start and end to output
+    //     return output
+
+    //     else if start plus end is bigger than target sum 
+    //     decrement end pointer
+
+    //     else if start plus end is bigger than target sum 
+    //     increment start pointer
+    // end loop 
     return [-1, -1];
-  }
+}
