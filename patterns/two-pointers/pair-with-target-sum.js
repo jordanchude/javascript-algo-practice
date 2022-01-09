@@ -15,19 +15,19 @@
 // Output: [0, 2]
 // Explanation: The numbers at index 0 and 2 add up to 11: 2+9=11
 
-
+// USER ATTEMPT
 const pair_with_targetsum = function(arr, target_sum) {
     let start = 0;
     let end = arr.length - 1;
     let output = []
 
     while (start < end) {
-        if (start + end === target_sum) {
+        if (arr[start] + arr[end] === target_sum) {
             output.push(start, end)
             return output;
-        } else if ((start + end) > target_sum) {
+        } else if ((arr[start] + arr[end]) > target_sum) {
             end = end - 1;
-        } else if ((start + end) < target_sum) {
+        } else if ((arr[start] + arr[end]) < target_sum) {
             start = start + 1;
         }
     }
@@ -52,4 +52,4 @@ const pair_with_targetsum = function(arr, target_sum) {
 }
 
 console.log(pair_with_targetsum([1, 2, 3, 4, 6], 6))
-// console.log(pair_with_targetsum([2, 5, 9, 11], 11))
+console.log(pair_with_targetsum([2, 5, 9, 11], 11))
