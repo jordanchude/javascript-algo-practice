@@ -17,7 +17,20 @@
 
 
 const pair_with_targetsum = function(arr, target_sum) {
-    // TODO: Write your code here
+    let start = 0;
+    let end = arr.length - 1;
+    let output = []
+
+    while (start < end) {
+        if (start + end === target_sum) {
+            output.push(start, end)
+            return output;
+        } else if ((start + end) > target_sum) {
+            end = end - 1;
+        } else if ((start + end) < target_sum) {
+            start = start + 1;
+        }
+    }
 
     // pseudocode
     // initiate "start" variable
@@ -37,3 +50,6 @@ const pair_with_targetsum = function(arr, target_sum) {
     // end loop 
     return [-1, -1];
 }
+
+console.log(pair_with_targetsum([1, 2, 3, 4, 6], 6))
+// console.log(pair_with_targetsum([2, 5, 9, 11], 11))
