@@ -31,8 +31,47 @@ class Interval {
   
   
   const merge = function(intervals) {
-    merged = []
-    // TODO: Write your code here
+      // if interval is less than two, 
+      // there's only one interval and it can't be merged
+    if (intervals.length < 2) {
+        return intervals
+    }
+
+      // initiate merged final result array
+    let merged = []
+
+    // sort intervals
+    intervals.sort((a, b) => a[0] - b[0])
+
+    // initiate start and end variables for first interval
+    let start = intervals[0].start
+    let end = intervals[0].end
+
+    // Loop through intervals
+    for (i = 1; i < intervals.length; i++) {
+
+        // inititate variable for current interval
+        const interval = intervals[i]
+
+        // if beginning of current interval is less than or equal to end of first interval
+        if (interval.start <= end) {
+            // end is re-assigned to the biggest end of the current interval or the first interval
+            end = Math.max(interval.end, end)
+
+        // else there isn't an overlapping interval
+        } else {
+
+            // add first or current interval to list of intervals
+            merged.push(new Interval(start, end))
+
+            // re-assign interval start and end to current interval start and end
+            start = interval.start;
+            end = interval.end
+        }
+    }
+
+    // add the last interval in the list of intervals
+    merged.push(new Interval(start, end));
     return merged;
   };
   
