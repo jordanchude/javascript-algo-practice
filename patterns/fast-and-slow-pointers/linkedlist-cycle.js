@@ -9,7 +9,18 @@ class Node {
   }
   
   const has_cycle = function(head) {
-    // TODO: Write your code here
+    let fast = head.next;
+    let slow = head;
+
+    while (fast != null && fast.next != null) {
+        if (fast === slow) {
+           return true; 
+        }
+
+        fast = fast.next.next;
+        slow = slow.next;
+    }
+
     return false
   }
   
