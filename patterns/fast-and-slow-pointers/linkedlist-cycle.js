@@ -1,6 +1,7 @@
 // PROBLEM STATEMENT
 // Given the head of a Singly LinkedList, write a function to determine if the LinkedList has a cycle in it or not.
 
+// USER SOLUTION
 class Node {
     constructor(value, next=null){
       this.value = value;
@@ -38,3 +39,6 @@ class Node {
   
   head.next.next.next.next.next.next = head.next.next.next
   console.log(`LinkedList has cycle: ${has_cycle(head)}`)  
+
+  // Time complexity: O(N)
+  // Space complexity: O(1)
