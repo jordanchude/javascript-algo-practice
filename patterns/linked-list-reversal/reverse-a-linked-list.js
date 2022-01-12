@@ -46,4 +46,5 @@ class Node {
   console.log(`Nodes of original LinkedList are: ${head.get_list()}`)
   console.log(`Nodes of reversed LinkedList are: ${reverse(head).get_list()}`)
   
-  
+  // Time complexity: O(N)
+  // Space complexity: O(1)
