@@ -19,26 +19,41 @@ class TreeNode {
       return result;
     }
 
+    // create array to count current level
     const queue = new Array();
+
+    // start current level with root
     queue.push(root);
 
+
     while (queue.length > 0) {
+      // count levelSize for currentLevel array
       let levelSize = queue.length;
+
+      // initialize currentLevel array to hold current level
       let currentLevel = []
 
+      // loop through queue
       for (i = 0; i < levelSize; i++) {
+        // take each element
         let currentNode = queue.shift();
+
+        // push value of element to currentLevel array
         currentLevel.push(currentNode.value);
 
+        // ADDING CHILDREN TO QUEUE
+        // if left node isn't null, push it to queue
         if (currentNode.left !== null) {
           queue.push(currentNode.left)
         }
 
+        // if right node isn't null, push it to queue
         if (currentNode.right !== null) {
           queue.push(currentNode.right);
         }
       }
 
+      // add currentLevel array to result array
       result.push(currentLevel);
     }
 
