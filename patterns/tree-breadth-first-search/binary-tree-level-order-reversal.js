@@ -12,8 +12,36 @@ class TreeNode {
   
   
   const traverse = function(root) {
-    result = [];
-    // TODO: Write your code here
+    let result = [];
+
+    // if root is null, tree is empty
+    if (root === null) {
+      return result;
+    }
+
+    const queue = new Array();
+    queue.push(root);
+
+    while (queue.length > 0) {
+      let levelSize = queue.length;
+      let currentLevel = []
+
+      for (i = 0; i < levelSize; i++) {
+        let currentNode = queue.shift();
+        currentLevel.push(currentNode.value);
+
+        if (currentNode.left !== null) {
+          queue.push(currentNode.left)
+        }
+
+        if (currentNode.right !== null) {
+          queue.push(currentNode.right);
+        }
+      }
+
+      result.push(currentLevel);
+    }
+
     return result;
   };
   
@@ -26,3 +54,5 @@ class TreeNode {
   root.right.left = new TreeNode(10);
   root.right.right = new TreeNode(5);
   console.log(`Level order traversal: ${traverse(root)}`);
+
+  // console.log(root);
